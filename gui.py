@@ -21,35 +21,91 @@ class LoginFrame(tk.Frame):
         self.on_login = on_login
         self.on_register = on_register
         
-        # Configure the frame
-        self.configure(padx=600, pady=300)
+        # Configure the frame with gradient-like background
+        self.configure(bg="#e6f2ff", padx=550, pady=200)
         
         # Create widgets
         self.create_widgets()
         
     def create_widgets(self):
-        # Title
-        ttk.Label(self, text="Event Management System", font=("Arial", 16, "bold")).grid(row=0, column=0, columnspan=2, pady=10)
+        # Create a decorative top banner
+        banner_frame = tk.Frame(self, bg="#4a86e8", padx=30, pady=20)
+        banner_frame.grid(row=0, column=0, sticky="ew", pady=(0, 25))
         
-        # Username
-        ttk.Label(self, text="Username:").grid(row=1, column=0, sticky="w", pady=5)
+        # Center the title with shadow effect
+        title_frame = tk.Frame(banner_frame, bg="#4a86e8")
+        title_frame.pack(fill="x")
+        
+        # Shadow label (slightly offset)
+        ttk.Label(title_frame, text="Event Management System", 
+                 font=("Arial", 22, "bold"), foreground="#2a5698",
+                 background="#4a86e8").pack(anchor="center")
+        
+        # Main title label
+        ttk.Label(title_frame, text="Event Management System", 
+                 font=("Arial", 22, "bold"), foreground="white",
+                 background="#4a86e8").place(relx=0.5, rely=0.5, anchor="center")
+        
+        # Create a rounded content frame
+        content_frame = tk.Frame(self, bg="white", padx=40, pady=30,
+                               highlightbackground="#c9daf8", 
+                               highlightthickness=2)
+        content_frame.grid(row=1, column=0, pady=10)
+        
+        # Username with centered elements
+        username_frame = tk.Frame(content_frame, bg="white")
+        username_frame.pack(fill="x", pady=12)
+        ttk.Label(username_frame, text="Username", font=("Arial", 12),
+                 background="white").pack(anchor="center")
         self.username_var = tk.StringVar()
-        username_entry = ttk.Entry(self, textvariable=self.username_var, width=30)
-        username_entry.grid(row=1, column=1, sticky="w", pady=5)
+        username_entry = ttk.Entry(username_frame, textvariable=self.username_var, 
+                                  width=36, font=("Arial", 11))
+        username_entry.pack(anchor="center", pady=(5, 0))
         username_entry.bind("<Return>", lambda event: self.login())
         
-        # Password
-        ttk.Label(self, text="Password:").grid(row=2, column=0, sticky="w", pady=5)
+        # Password with centered elements
+        password_frame = tk.Frame(content_frame, bg="white")
+        password_frame.pack(fill="x", pady=12)
+        ttk.Label(password_frame, text="Password", font=("Arial", 12),
+                 background="white").pack(anchor="center")
         self.password_var = tk.StringVar()
-        password_entry = ttk.Entry(self, textvariable=self.password_var, show="*", width=30)
-        password_entry.grid(row=2, column=1, sticky="w", pady=5)
+        password_entry = ttk.Entry(password_frame, textvariable=self.password_var, 
+                                  show="•", width=36, font=("Arial", 11))
+        password_entry.pack(anchor="center", pady=(5, 0))
         password_entry.bind("<Return>", lambda event: self.login())
         
-        # Login Button
-        ttk.Button(self, text="Login", command=self.login).grid(row=3, column=0, pady=10)
+        # Create a stylish button frame
+        button_frame = tk.Frame(content_frame, bg="white", pady=15)
+        button_frame.pack(fill="x")
         
-        # Register Button
-        ttk.Button(self, text="Register", command=self.show_register).grid(row=3, column=1, pady=10)
+        # Center the buttons in their container
+        btn_container = tk.Frame(button_frame, bg="white")
+        btn_container.pack(anchor="center")
+        
+        # Create custom button styles
+        style = ttk.Style()
+        style.configure("Login.TButton", font=("Arial", 12, "bold"))
+        style.configure("Register.TButton", font=("Arial", 12))
+        style.map("Login.TButton",
+                 foreground=[('pressed', 'white'), ('active', 'white')],
+                 background=[('pressed', '!disabled', '#3a7ca5'), ('active', '#4a86e8')])
+        
+        # Login Button with improved styling
+        login_btn = ttk.Button(btn_container, text="LOGIN", style="Login.TButton", 
+                             command=self.login, width=15)
+        login_btn.pack(side=tk.LEFT, padx=(0, 15))
+        
+        # Register Button with improved styling
+        register_btn = ttk.Button(btn_container, text="REGISTER", style="Register.TButton", 
+                                command=self.show_register, width=15)
+        register_btn.pack(side=tk.LEFT)
+        
+        # Add a decorative footer
+        footer_frame = tk.Frame(self, bg="#e6f2ff", pady=10)
+        footer_frame.grid(row=2, column=0, sticky="ew")
+        ttk.Label(footer_frame, text="© 2025 Event Management System", 
+                 foreground="#555555", background="#e6f2ff",
+                 font=("Arial", 9)).pack(anchor="center")
     
     def login(self):
         username = self.username_var.get()
@@ -72,45 +128,117 @@ class RegisterFrame(tk.Frame):
         self.on_register = on_register
         self.on_back = on_back
         
-        # Configure the frame
-        self.configure(padx=20, pady=20)
+        # Configure the frame with matching style
+        self.configure(bg="#e6f2ff", padx=550, pady=280)
         
         # Create widgets
         self.create_widgets()
         
     def create_widgets(self):
-        # Title
-        ttk.Label(self, text="Register New User", font=("Arial", 16, "bold")).grid(row=0, column=0, columnspan=2, pady=10)
+        # Create a decorative top banner
+        banner_frame = tk.Frame(self, bg="#4a86e8", padx=30, pady=20)
+        banner_frame.grid(row=0, column=0, sticky="ew", pady=(0, 25))
         
-        # Username
-        ttk.Label(self, text="Username:").grid(row=1, column=0, sticky="w", pady=5)
+        # Center the title with shadow effect
+        title_frame = tk.Frame(banner_frame, bg="#4a86e8")
+        title_frame.pack(fill="x")
+        
+        # Shadow label (slightly offset)
+        ttk.Label(title_frame, text="Register New User", 
+                 font=("Arial", 22, "bold"), foreground="#2a5698",
+                 background="#4a86e8").pack(anchor="center")
+        
+        # Main title label
+        ttk.Label(title_frame, text="Register New User", 
+                 font=("Arial", 22, "bold"), foreground="white",
+                 background="#4a86e8").place(relx=0.5, rely=0.5, anchor="center")
+        
+        # Create a rounded content frame
+        content_frame = tk.Frame(self, bg="white", padx=40, pady=30,
+                               highlightbackground="#c9daf8", 
+                               highlightthickness=2)
+        content_frame.grid(row=1, column=0, pady=10)
+        
+        # Username with centered elements
+        username_frame = tk.Frame(content_frame, bg="white")
+        username_frame.pack(fill="x", pady=10)
+        ttk.Label(username_frame, text="Username", font=("Arial", 12),
+                 background="white").pack(anchor="center")
         self.username_var = tk.StringVar()
-        ttk.Entry(self, textvariable=self.username_var, width=30).grid(row=1, column=1, sticky="w", pady=5)
+        ttk.Entry(username_frame, textvariable=self.username_var, 
+                 width=36, font=("Arial", 11)).pack(anchor="center", pady=(5, 0))
         
-        # Password
-        ttk.Label(self, text="Password:").grid(row=2, column=0, sticky="w", pady=5)
+        # Password with centered elements
+        password_frame = tk.Frame(content_frame, bg="white")
+        password_frame.pack(fill="x", pady=10)
+        ttk.Label(password_frame, text="Password", font=("Arial", 12),
+                 background="white").pack(anchor="center")
         self.password_var = tk.StringVar()
-        ttk.Entry(self, textvariable=self.password_var, show="*", width=30).grid(row=2, column=1, sticky="w", pady=5)
+        ttk.Entry(password_frame, textvariable=self.password_var, 
+                 show="•", width=36, font=("Arial", 11)).pack(anchor="center", pady=(5, 0))
         
-        # Email
-        ttk.Label(self, text="Email:").grid(row=3, column=0, sticky="w", pady=5)
+        # Email with centered elements
+        email_frame = tk.Frame(content_frame, bg="white")
+        email_frame.pack(fill="x", pady=10)
+        ttk.Label(email_frame, text="Email", font=("Arial", 12),
+                 background="white").pack(anchor="center")
         self.email_var = tk.StringVar()
-        ttk.Entry(self, textvariable=self.email_var, width=30).grid(row=3, column=1, sticky="w", pady=5)
+        ttk.Entry(email_frame, textvariable=self.email_var, 
+                 width=36, font=("Arial", 11)).pack(anchor="center", pady=(5, 0))
         
-        # Role
-        ttk.Label(self, text="Role:").grid(row=4, column=0, sticky="w", pady=5)
+        # Role selection with better styling and centered
+        role_frame = tk.Frame(content_frame, bg="white")
+        role_frame.pack(fill="x", pady=10)
+        ttk.Label(role_frame, text="Select Your Role", font=("Arial", 12),
+                 background="white").pack(anchor="center", pady=(0, 5))
+        
+        # Center the radio buttons
+        role_options_frame = tk.Frame(role_frame, bg="white")
+        role_options_frame.pack(anchor="center")
+        
         self.role_var = tk.StringVar(value="user")
-        role_frame = ttk.Frame(self)
-        role_frame.grid(row=4, column=1, sticky="w", pady=5)
         
-        ttk.Radiobutton(role_frame, text="Regular User", variable=self.role_var, value="user").pack(side=tk.LEFT)
-        ttk.Radiobutton(role_frame, text="Organizer", variable=self.role_var, value="organizer").pack(side=tk.LEFT)
+        # Styled radio buttons
+        style = ttk.Style()
+        style.configure("TRadiobutton", background="white", font=("Arial", 11))
         
-        # Register Button
-        ttk.Button(self, text="Register", command=self.register).grid(row=5, column=0, pady=10)
+        ttk.Radiobutton(role_options_frame, text="Regular User", variable=self.role_var, 
+                      value="user", style="TRadiobutton").pack(side=tk.LEFT, padx=(0, 20))
+        ttk.Radiobutton(role_options_frame, text="Event Organizer", variable=self.role_var, 
+                      value="organizer", style="TRadiobutton").pack(side=tk.LEFT)
         
-        # Back Button
-        ttk.Button(self, text="Back to Login", command=self.on_back).grid(row=5, column=1, pady=10)
+        # Button frame
+        button_frame = tk.Frame(content_frame, bg="white", pady=15)
+        button_frame.pack(fill="x")
+        
+        # Center the buttons in their container
+        btn_container = tk.Frame(button_frame, bg="white")
+        btn_container.pack(anchor="center")
+        
+        # Create custom button styles
+        style = ttk.Style()
+        style.configure("Register.TButton", font=("Arial", 12, "bold"))
+        style.configure("Back.TButton", font=("Arial", 12))
+        style.map("Register.TButton",
+                 foreground=[('pressed', 'white'), ('active', 'white')],
+                 background=[('pressed', '!disabled', '#3a7ca5'), ('active', '#4a86e8')])
+        
+        # Register Button with improved styling
+        register_btn = ttk.Button(btn_container, text="CREATE ACCOUNT", style="Register.TButton",
+                                command=self.register, width=18)
+        register_btn.pack(side=tk.LEFT, padx=(0, 15))
+        
+        # Back Button with improved styling
+        back_btn = ttk.Button(btn_container, text="BACK TO LOGIN", style="Back.TButton",
+                             command=self.on_back, width=18)
+        back_btn.pack(side=tk.LEFT)
+        
+        # Add a decorative footer
+        footer_frame = tk.Frame(self, bg="#e6f2ff", pady=10)
+        footer_frame.grid(row=2, column=0, sticky="ew")
+        ttk.Label(footer_frame, text="© 2025 Event Management System", 
+                 foreground="#555555", background="#e6f2ff",
+                 font=("Arial", 9)).pack(anchor="center")
     
     def register(self):
         username = self.username_var.get()
@@ -123,7 +251,6 @@ class RegisterFrame(tk.Frame):
             return
         
         self.on_register(username, password, email, role)
-
 
 class UserDashboard(tk.Frame):
     def __init__(self, master, system, user_id, role, on_logout):
@@ -221,13 +348,41 @@ class UserDashboard(tk.Frame):
         self.load_events()
     
     def create_admin_tabs(self):
+    # Apply a theme for better appearance
+        style = ttk.Style()
+        
+        # Configure colors for UI elements
+        bg_color = "#f5f7fa"  # Light blue-gray background
+        header_bg = "#4a6fa5"  # Darker blue for headers
+        header_fg = "#ffffff"  # White text for headers
+        btn_color = "#000"  # Blue for buttons
+        
+        # Configure styles
+        style.configure("Treeview", rowheight=25, font=('Helvetica', 10), background=bg_color, fieldbackground=bg_color)
+        style.configure("Treeview.Heading", font=('Helvetica', 10, 'bold'), background=header_bg, foreground=header_fg)
+        style.map('Treeview', background=[('selected', '#007bff')], foreground=[('selected', 'white')])
+        
+        # Configure TFrame with background color
+        style.configure("MainFrame.TFrame", background=bg_color)
+        style.configure("Header.TFrame", background=header_bg)
+        style.configure("Header.TLabel", background=header_bg, foreground=header_fg, font=('Helvetica', 12, 'bold'))
+        style.configure("TButton", background=btn_color)
+        
         # Users Management Tab
-        users_tab = ttk.Frame(self.notebook)
+        users_tab = ttk.Frame(self.notebook, padding=10, style="MainFrame.TFrame")
         self.notebook.add(users_tab, text="Manage Users")
         
+        # Title section with colored background
+        header_frame = ttk.Frame(users_tab, style="Header.TFrame")
+        header_frame.pack(fill='x', pady=(0, 10))
+        ttk.Label(header_frame, text="User Management", style="Header.TLabel", padding=5).pack(anchor='w')
+        
+        # Create frame for treeview and scrollbar
+        tree_frame = ttk.Frame(users_tab, style="MainFrame.TFrame")
+        tree_frame.pack(fill='both', expand=True)
+        
         # Create the treeview
-        self.users_tree = ttk.Treeview(users_tab, columns=("Username", "Email", "Role", "Status"))
-        self.users_tree.pack(fill='both', expand=True, padx=5, pady=5)
+        self.users_tree = ttk.Treeview(tree_frame, columns=("Username", "Email", "Role", "Status"))
         
         # Configure the treeview
         self.users_tree.heading("#0", text="ID")
@@ -242,29 +397,62 @@ class UserDashboard(tk.Frame):
         self.users_tree.column("Role", width=100, stretch=tk.NO)
         self.users_tree.column("Status", width=100, stretch=tk.NO)
         
-        # Add a scrollbar
-        scrollbar = ttk.Scrollbar(users_tab, orient="vertical", command=self.users_tree.yview)
-        scrollbar.pack(side=tk.RIGHT, fill='y')
-        self.users_tree.configure(yscrollcommand=scrollbar.set)
+        # Apply alternating row colors (zebra stripes)
+        self.users_tree.tag_configure('odd', background='#e6eef7')
+        self.users_tree.tag_configure('even', background='#ffffff')
         
-        # Add a button frame
-        button_frame = ttk.Frame(users_tab)
-        button_frame.pack(fill='x', pady=5)
+        # Add scrollbars
+        y_scrollbar = ttk.Scrollbar(tree_frame, orient="vertical", command=self.users_tree.yview)
+        x_scrollbar = ttk.Scrollbar(tree_frame, orient="horizontal", command=self.users_tree.xview)
         
-        # Add buttons
-        ttk.Button(button_frame, text="Delete User", command=self.delete_user).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="Refresh", command=self.load_users).pack(side=tk.LEFT, padx=5)
+        # Configure the treeview to use the scrollbars
+        self.users_tree.configure(yscrollcommand=y_scrollbar.set, xscrollcommand=x_scrollbar.set)
+        
+        # Pack the treeview and scrollbars
+        y_scrollbar.pack(side=tk.RIGHT, fill='y')
+        x_scrollbar.pack(side=tk.BOTTOM, fill='x')
+        self.users_tree.pack(side=tk.LEFT, fill='both', expand=True)
+        
+        # Add a button frame with padding and background
+        button_frame = ttk.Frame(users_tab, style="MainFrame.TFrame")
+        button_frame.pack(fill='x', pady=10)
+        
+        # Define button style
+        style.configure("Action.TButton", background="black", foreground="white", font=('Helvetica', 10))
+        
+        # Add buttons with consistent styling
+        style.configure("BlackButton.TButton", background="black", foreground="black", font=('Helvetica', 10))
+        ttk.Button(button_frame, text="Delete User", command=self.delete_user, width=15, style="BlackButton.TButton").pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Refresh", command=self.load_users, width=15, style="BlackButton.TButton").pack(side=tk.LEFT, padx=5)
+        # Override load_users to apply row tags
+        original_load_users = self.load_users
+        def styled_load_users(*args, **kwargs):
+            original_load_users(*args, **kwargs)
+            # Apply tags to rows
+            for i, item in enumerate(self.users_tree.get_children()):
+                tag = 'even' if i % 2 == 0 else 'odd'
+                self.users_tree.item(item, tags=(tag,))
+        
+        self.load_users = styled_load_users
         
         # Load users
         self.load_users()
         
         # Event Approval Tab
-        approval_tab = ttk.Frame(self.notebook)
+        approval_tab = ttk.Frame(self.notebook, padding=10, style="MainFrame.TFrame")
         self.notebook.add(approval_tab, text="Event Approvals")
         
+        # Title section with colored background
+        approval_header_frame = ttk.Frame(approval_tab, style="Header.TFrame")
+        approval_header_frame.pack(fill='x', pady=(0, 10))
+        ttk.Label(approval_header_frame, text="Event Approval Queue", style="Header.TLabel", padding=5).pack(anchor='w')
+        
+        # Create frame for approval treeview and scrollbar
+        approval_tree_frame = ttk.Frame(approval_tab, style="MainFrame.TFrame")
+        approval_tree_frame.pack(fill='both', expand=True)
+        
         # Create the treeview
-        self.approval_tree = ttk.Treeview(approval_tab, columns=("Title", "Organizer", "Date", "Category"))
-        self.approval_tree.pack(fill='both', expand=True, padx=5, pady=5)
+        self.approval_tree = ttk.Treeview(approval_tree_frame, columns=("Title", "Organizer", "Date", "Category"))
         
         # Configure the treeview
         self.approval_tree.heading("#0", text="ID")
@@ -279,19 +467,43 @@ class UserDashboard(tk.Frame):
         self.approval_tree.column("Date", width=150, stretch=tk.NO)
         self.approval_tree.column("Category", width=100, stretch=tk.NO)
         
-        # Add a scrollbar
-        scrollbar = ttk.Scrollbar(approval_tab, orient="vertical", command=self.approval_tree.yview)
-        scrollbar.pack(side=tk.RIGHT, fill='y')
-        self.approval_tree.configure(yscrollcommand=scrollbar.set)
+        # Apply alternating row colors (zebra stripes)
+        self.approval_tree.tag_configure('odd', background='#e6eef7')
+        self.approval_tree.tag_configure('even', background='#ffffff')
         
-        # Add a button frame
-        button_frame = ttk.Frame(approval_tab)
-        button_frame.pack(fill='x', pady=5)
+        # Add scrollbars
+        approval_y_scrollbar = ttk.Scrollbar(approval_tree_frame, orient="vertical", command=self.approval_tree.yview)
+        approval_x_scrollbar = ttk.Scrollbar(approval_tree_frame, orient="horizontal", command=self.approval_tree.xview)
         
-        # Add buttons
-        ttk.Button(button_frame, text="Approve Event", command=self.approve_event).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="View Details", command=self.view_approval_details).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="Refresh", command=self.load_unapproved_events).pack(side=tk.LEFT, padx=5)
+        # Configure the treeview to use the scrollbars
+        self.approval_tree.configure(yscrollcommand=approval_y_scrollbar.set, xscrollcommand=approval_x_scrollbar.set)
+        
+        # Pack the treeview and scrollbars
+        approval_y_scrollbar.pack(side=tk.RIGHT, fill='y')
+        approval_x_scrollbar.pack(side=tk.BOTTOM, fill='x')
+        self.approval_tree.pack(side=tk.LEFT, fill='both', expand=True)
+        
+        # Add a button frame with padding and background
+        approval_button_frame = ttk.Frame(approval_tab, style="MainFrame.TFrame")
+        approval_button_frame.pack(fill='x', pady=10)
+        
+        # Add buttons with consistent styling
+        style.configure("BlackButton.TButton", background="black", foreground="black", font=('Helvetica', 10))
+        
+        ttk.Button(approval_button_frame, text="Approve Event", command=self.approve_event, width=15, style="BlackButton.TButton").pack(side=tk.LEFT, padx=5)
+        ttk.Button(approval_button_frame, text="View Details", command=self.view_approval_details, width=15, style="BlackButton.TButton").pack(side=tk.LEFT, padx=5)
+        ttk.Button(approval_button_frame, text="Refresh", command=self.load_unapproved_events, width=15, style="BlackButton.TButton").pack(side=tk.LEFT, padx=5)
+        
+        # Override load_unapproved_events to apply row tags
+        original_load_events = self.load_unapproved_events
+        def styled_load_events(*args, **kwargs):
+            original_load_events(*args, **kwargs)
+            # Apply tags to rows
+            for i, item in enumerate(self.approval_tree.get_children()):
+                tag = 'even' if i % 2 == 0 else 'odd'
+                self.approval_tree.item(item, tags=(tag,))
+        
+        self.load_unapproved_events = styled_load_events
         
         # Load unapproved events
         self.load_unapproved_events()
@@ -900,75 +1112,111 @@ class UserDashboard(tk.Frame):
             messagebox.showerror("Error", "You can only edit your own events")
             return
         
-        # Create a window for editing the event
+        # Create a window for editing the event with improved style
         edit_window = tk.Toplevel(self.master)
         edit_window.title(f"Edit Event: {event.title}")
-        edit_window.geometry("500x600")
+        edit_window.geometry("550x650")
+        edit_window.configure(bg="#f5f7fa")  # Light blue-gray background
         
         # Make the window modal
         edit_window.transient(self.master)
         edit_window.grab_set()
         
-        # Create a form
-        form_frame = ttk.Frame(edit_window, padding=20)
+        # Add a header
+        header_frame = tk.Frame(edit_window, bg="#4a6fa5", padx=10, pady=10)
+        header_frame.pack(fill='x')
+        
+        header_label = tk.Label(header_frame, text=f"Edit Event: {event.title}", 
+                            bg="#4a6fa5", fg="white", font=("Helvetica", 14, "bold"))
+        header_label.pack(anchor="w")
+        
+        # Create a styled form
+        form_frame = tk.Frame(edit_window, bg="#f5f7fa", padx=25, pady=20)
         form_frame.pack(fill='both', expand=True)
         
+        # Custom style for labels
+        label_style = {"bg": "#f5f7fa", "fg": "#333333", "font": ("Helvetica", 10, "bold")}
+        entry_style = {"bg": "white", "relief": "solid", "borderwidth": 1}
+        button_style = {"bg": "#5b87c7", "fg": "white", "font": ("Helvetica", 11, "bold"), 
+                    "activebackground": "#3a679f", "relief": "raised", "borderwidth": 2, "cursor": "hand2"}
+        
         # Title
-        ttk.Label(form_frame, text="Title:").grid(row=0, column=0, sticky="w", pady=5)
+        tk.Label(form_frame, text="Title:", **label_style).grid(row=0, column=0, sticky="w", pady=10, padx=5)
         title_var = tk.StringVar(value=event.title)
-        ttk.Entry(form_frame, textvariable=title_var, width=40).grid(row=0, column=1, sticky="w", pady=5)
+        title_entry = tk.Entry(form_frame, textvariable=title_var, width=40, **entry_style)
+        title_entry.grid(row=0, column=1, sticky="w", pady=10, padx=5)
         
         # Description
-        ttk.Label(form_frame, text="Description:").grid(row=1, column=0, sticky="nw", pady=5)
-        description_text = tk.Text(form_frame, width=40, height=5)
-        description_text.grid(row=1, column=1, sticky="w", pady=5)
+        tk.Label(form_frame, text="Description:", **label_style).grid(row=1, column=0, sticky="nw", pady=10, padx=5)
+        description_frame = tk.Frame(form_frame, bg="#f5f7fa")
+        description_frame.grid(row=1, column=1, sticky="w", pady=10, padx=5)
+        
+        description_text = tk.Text(description_frame, width=40, height=5, **entry_style)
+        description_text.pack(side=tk.LEFT, fill="both", expand=True)
+        description_scroll = tk.Scrollbar(description_frame, command=description_text.yview)
+        description_scroll.pack(side=tk.RIGHT, fill="y")
+        description_text.configure(yscrollcommand=description_scroll.set)
         description_text.insert("1.0", event.description)
         
         # Date
-        ttk.Label(form_frame, text="Date:").grid(row=2, column=0, sticky="w", pady=5)
-        date_frame = ttk.Frame(form_frame)
-        date_frame.grid(row=2, column=1, sticky="w", pady=5)
+        tk.Label(form_frame, text="Date:", **label_style).grid(row=2, column=0, sticky="w", pady=10, padx=5)
+        date_frame = tk.Frame(form_frame, bg="#f5f7fa")
+        date_frame.grid(row=2, column=1, sticky="w", pady=10, padx=5)
         
-        # Use DateEntry for date with the current event date
+        # Use DateEntry for date with the current event date and better styling
         event_date = event.date
-        date_picker = DateEntry(date_frame, width=12, background='darkblue',
+        date_picker = DateEntry(date_frame, width=12, background='#5b87c7',
                                 foreground='white', borderwidth=2, date_pattern='yyyy-mm-dd',
                                 year=event_date.year, month=event_date.month, day=event_date.day)
         date_picker.pack(side=tk.LEFT)
         
         # Time selection with current event time
-        ttk.Label(date_frame, text="  Time:").pack(side=tk.LEFT)
+        tk.Label(date_frame, text="  Time:", bg="#f5f7fa").pack(side=tk.LEFT)
         hour_var = tk.StringVar(value=str(event_date.hour).zfill(2))
         ttk.Combobox(date_frame, textvariable=hour_var, values=[str(i).zfill(2) for i in range(24)], 
                     width=3, state="readonly").pack(side=tk.LEFT)
-        ttk.Label(date_frame, text=":").pack(side=tk.LEFT)
+        tk.Label(date_frame, text=":", bg="#f5f7fa").pack(side=tk.LEFT)
         minute_var = tk.StringVar(value=str(event_date.minute).zfill(2))
         ttk.Combobox(date_frame, textvariable=minute_var, values=[str(i).zfill(2) for i in range(0, 60, 5)], 
                     width=3, state="readonly").pack(side=tk.LEFT)
         
         # Venue
-        ttk.Label(form_frame, text="Venue:").grid(row=3, column=0, sticky="w", pady=5)
+        tk.Label(form_frame, text="Venue:", **label_style).grid(row=3, column=0, sticky="w", pady=10, padx=5)
         venue_var = tk.StringVar(value=event.venue)
-        ttk.Entry(form_frame, textvariable=venue_var, width=40).grid(row=3, column=1, sticky="w", pady=5)
+        tk.Entry(form_frame, textvariable=venue_var, width=40, **entry_style).grid(row=3, column=1, sticky="w", pady=10, padx=5)
         
         # Capacity
-        ttk.Label(form_frame, text="Capacity:").grid(row=4, column=0, sticky="w", pady=5)
+        tk.Label(form_frame, text="Capacity:", **label_style).grid(row=4, column=0, sticky="w", pady=10, padx=5)
+        capacity_frame = tk.Frame(form_frame, bg="#f5f7fa")
+        capacity_frame.grid(row=4, column=1, sticky="w", pady=10, padx=5)
+        
         capacity_var = tk.IntVar(value=event.capacity)
-        capacity_spinner = ttk.Spinbox(form_frame, from_=1, to=1000, textvariable=capacity_var, width=10)
-        capacity_spinner.grid(row=4, column=1, sticky="w", pady=5)
+        capacity_spinner = ttk.Spinbox(capacity_frame, from_=1, to=1000, textvariable=capacity_var, width=10)
+        capacity_spinner.pack(side=tk.LEFT)
         
         # Disable capacity field if there are registered users
         if len(event.registered_users) > 0:
             capacity_spinner.configure(state="disabled")
-            ttk.Label(form_frame, text=f"(Cannot change: {len(event.registered_users)} users registered)").grid(
-                row=4, column=1, sticky="e", pady=5)
+            reg_label = tk.Label(capacity_frame, 
+                                text=f"({len(event.registered_users)} users registered)", 
+                                bg="#f5f7fa", fg="#e74c3c")
+            reg_label.pack(side=tk.LEFT, padx=10)
         
         # Category
-        ttk.Label(form_frame, text="Category:").grid(row=5, column=0, sticky="w", pady=5)
+        tk.Label(form_frame, text="Category:", **label_style).grid(row=5, column=0, sticky="w", pady=10, padx=5)
         category_var = tk.StringVar(value=event.category)
         categories = ["Technology", "Music", "Art", "Sports", "Education", "Other"]
-        ttk.Combobox(form_frame, textvariable=category_var, values=categories, width=20, state="readonly").grid(
-            row=5, column=1, sticky="w", pady=5)
+        category_combo = ttk.Combobox(form_frame, textvariable=category_var, values=categories, width=20, state="readonly")
+        category_combo.grid(row=5, column=1, sticky="w", pady=10, padx=5)
+        category_combo.current(categories.index(event.category) if event.category in categories else 0)
+        
+        # Separator line
+        separator = ttk.Separator(form_frame, orient='horizontal')
+        separator.grid(row=6, column=0, columnspan=2, sticky="ew", pady=15)
+        
+        # Button frame
+        button_frame = tk.Frame(form_frame, bg="#f5f7fa")
+        button_frame.grid(row=7, column=0, columnspan=2, pady=10)
         
         # Update button
         def update_event():
@@ -997,7 +1245,7 @@ class UserDashboard(tk.Frame):
             
             # Update the event
             success, msg = self.system.update_event(event_id, title, description, event_date, 
-                                                   venue, capacity, category, self.user_id)
+                                                venue, capacity, category, self.user_id)
             
             if success:
                 messagebox.showinfo("Success", "Event updated successfully")
@@ -1011,7 +1259,20 @@ class UserDashboard(tk.Frame):
             else:
                 messagebox.showerror("Error", msg)
         
-        ttk.Button(form_frame, text="Update Event", command=update_event).grid(row=6, column=0, columnspan=2, pady=20)
+        cancel_button = tk.Button(button_frame, text="Cancel", width=15, command=edit_window.destroy, 
+                                **button_style, bg="#6c757d")
+        cancel_button.pack(side=tk.LEFT, padx=10)
+        
+        update_button = tk.Button(button_frame, text="Update Event", width=15, command=update_event, **button_style)
+        update_button.pack(side=tk.LEFT, padx=10)
+        
+        # Add some styling to the window
+        edit_window.update_idletasks()
+        width = edit_window.winfo_width()
+        height = edit_window.winfo_height()
+        x = (edit_window.winfo_screenwidth() // 2) - (width // 2)
+        y = (edit_window.winfo_screenheight() // 2) - (height // 2)
+        edit_window.geometry('{}x{}+{}+{}'.format(width, height, x, y))
 
 
 class EventManagementApp:
