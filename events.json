@@ -1,0 +1,145 @@
+{
+  "34028e56-f94c-4f9a-8253-17ab09c7f2f2": {
+    "event_id": "34028e56-f94c-4f9a-8253-17ab09c7f2f2",
+    "title": "technovate",
+    "description": "good",
+    "date": "2025-04-30T12:00:00",
+    "venue": "nr",
+    "capacity": 50,
+    "category": "Music",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": [
+      "afe0631b-af6c-4ae6-80ee-9037b22ac0e5",
+      "34a835c4-20e3-40fc-b843-ee7ed1da7fc0",
+      "c8ff790f-1b04-4573-9506-9de54151045f",
+      "9994e672-c672-4090-b3b3-19ed5958a68f"
+    ]
+  },
+  "67c7b79d-53f2-4ef3-86e0-b07beb416ac7": {
+    "event_id": "67c7b79d-53f2-4ef3-86e0-b07beb416ac7",
+    "title": "endsem",
+    "description": "this is a very painful and also neccesary event for students",
+    "date": "2025-05-05T14:30:00",
+    "venue": "iiit academic buiding",
+    "capacity": 50,
+    "category": "Education",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": [
+      "c8ff790f-1b04-4573-9506-9de54151045f"
+    ]
+  },
+  "95f1fc83-3c7a-45f4-89f0-224681a1dfc1": {
+    "event_id": "95f1fc83-3c7a-45f4-89f0-224681a1dfc1",
+    "title": "SAC Elections (IIIT NR)",
+    "description": "Here we are conducting a event for general elections for UG PG representatives for SAC.Here we also have elections for each club head vice head.\nIt will be a free and fair event with some code of conduct.",
+    "date": "2025-04-27T15:00:00",
+    "venue": "Online through ERP account",
+    "capacity": 1000,
+    "category": "Other",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": [
+      "c8ff790f-1b04-4573-9506-9de54151045f"
+    ]
+  },
+  "65a9313f-c37b-456d-a011-26cd955c5b43": {
+    "event_id": "65a9313f-c37b-456d-a011-26cd955c5b43",
+    "title": "Fresher's Orientation(2029 batch)",
+    "description": "This event will be a basic introductory event for freshers to get some basic knowledge about academic breif introduction about college culture, it's past record it's rule and regulations. Thid will be a very Fun event also. So don't forget to participate.",
+    "date": "2025-08-21T10:00:00",
+    "venue": "Auditorium",
+    "capacity": 350,
+    "category": "Other",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": [
+      "c8ff790f-1b04-4573-9506-9de54151045f"
+    ]
+  },
+  "26c35b76-189d-45d9-8f83-85812502ea1f": {
+    "event_id": "26c35b76-189d-45d9-8f83-85812502ea1f",
+    "title": "Independence day",
+    "description": "This event will held on 15th of august to celebrate the day of our great nation's independence. In this event all everyone should participate and show their patriotism.",
+    "date": "2025-08-15T09:30:00",
+    "venue": "In Front of Academic building",
+    "capacity": 500,
+    "category": "Other",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": [
+      "34a835c4-20e3-40fc-b843-ee7ed1da7fc0",
+      "c8ff790f-1b04-4573-9506-9de54151045f"
+    ]
+  },
+  "2b47dee0-33ca-49c4-b9fc-59ac5db3dbe0": {
+    "event_id": "2b47dee0-33ca-49c4-b9fc-59ac5db3dbe0",
+    "title": "Hackathon",
+    "description": "This hackathon is conducted by our college to boost our coding culture and improve our coding skills. These type of events will help to grow in competative life.\nIn this event there is two rounds:\n1. PPT submission\n2. a real life problem based question.\nthose who got max. marks in both they will be winner.\nprize pool is $50000\n1st position --> $25000\n2nd position --> $15000\n3rd position --> $10000",
+    "date": "2025-09-01T18:00:00",
+    "venue": "Data Science Lab (Academic Building)",
+    "capacity": 100,
+    "category": "Technology",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": [
+      "9994e672-c672-4090-b3b3-19ed5958a68f"
+    ]
+  },
+  "7bc29848-9776-4c7b-aaa5-871b47ec5513": {
+    "event_id": "7bc29848-9776-4c7b-aaa5-871b47ec5513",
+    "title": "Auditions for Igniters",
+    "description": "This is a event for taking audition for our dance club \"Igniters\" to get best talent in our campus.so those have interest to showcase your talent, join auditions and those are not in any club explore this club activities,join this club it will boost your confidence.",
+    "date": "2025-08-29T19:00:00",
+    "venue": "Amphitheatre(old)",
+    "capacity": 100,
+    "category": "Music",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": []
+  },
+  "da036b26-eefa-4ca4-9f84-8e0a3c276258": {
+    "event_id": "da036b26-eefa-4ca4-9f84-8e0a3c276258",
+    "title": "Auditions for Capriccio",
+    "description": "This is a event for taking audition for our singing club \"capriccio\" to get best talent in our campus.so those have interest to showcase your talent join auditions and those are not in any club explore this club activities,join this club it will boost your confidence.",
+    "date": "2025-08-29T18:00:00",
+    "venue": "Palm park",
+    "capacity": 100,
+    "category": "Music",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": [
+      "34a835c4-20e3-40fc-b843-ee7ed1da7fc0"
+    ]
+  },
+  "52259b73-6677-41fc-bda8-f346fcd3fbb9": {
+    "event_id": "52259b73-6677-41fc-bda8-f346fcd3fbb9",
+    "title": "ML Contest",
+    "description": "this is a contest for taking a step forward to improve our skills and to be fit in this competative race of job(placements). If yo have interest of ml,model training, or you just want to explore and learn new things then participate in this event.",
+    "date": "2025-09-04T18:30:00",
+    "venue": "Data Science Lab ",
+    "capacity": 100,
+    "category": "Technology",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": [
+      "34a835c4-20e3-40fc-b843-ee7ed1da7fc0",
+      "c8ff790f-1b04-4573-9506-9de54151045f"
+    ]
+  },
+  "2f116d64-fdea-4cb8-8a9b-00a6c123ba05": {
+    "event_id": "2f116d64-fdea-4cb8-8a9b-00a6c123ba05",
+    "title": "Audition for Indradhanush",
+    "description": "This is a event for taking audition for our painting (art) club \"Indradhanush\" to get best talent in our campus.so those have interest to showcase your talent join auditions and those are not in any club explore this club activities,join this club it will boost your confidence.",
+    "date": "2025-09-03T20:00:00",
+    "venue": "Room No. 122 (ACAD)",
+    "capacity": 75,
+    "category": "Art",
+    "organizer_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "is_approved": true,
+    "registered_users": [
+      "c8ff790f-1b04-4573-9506-9de54151045f"
+    ]
+  }
+}

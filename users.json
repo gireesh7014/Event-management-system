@@ -1,0 +1,84 @@
+{
+  "292ddb7d-8731-4c64-8e9a-a834f3e40eb3": {
+    "user_id": "292ddb7d-8731-4c64-8e9a-a834f3e40eb3",
+    "username": "admin",
+    "password": "admin123",
+    "email": "admin@example.com",
+    "is_active": true,
+    "role": "admin"
+  },
+  "afe0631b-af6c-4ae6-80ee-9037b22ac0e5": {
+    "user_id": "afe0631b-af6c-4ae6-80ee-9037b22ac0e5",
+    "username": "user1",
+    "password": "user111",
+    "email": "user1@gmail.com",
+    "is_active": true,
+    "role": "user",
+    "registered_events": [
+      "34028e56-f94c-4f9a-8253-17ab09c7f2f2"
+    ]
+  },
+  "4ee6579e-d918-4dcd-96e9-b30f2a5332af": {
+    "user_id": "4ee6579e-d918-4dcd-96e9-b30f2a5332af",
+    "username": "org2",
+    "password": "org222",
+    "email": "org2@gmail.com",
+    "is_active": true,
+    "role": "organizer",
+    "events": [
+      "34028e56-f94c-4f9a-8253-17ab09c7f2f2",
+      "67c7b79d-53f2-4ef3-86e0-b07beb416ac7",
+      "95f1fc83-3c7a-45f4-89f0-224681a1dfc1",
+      "65a9313f-c37b-456d-a011-26cd955c5b43",
+      "26c35b76-189d-45d9-8f83-85812502ea1f",
+      "2b47dee0-33ca-49c4-b9fc-59ac5db3dbe0",
+      "7bc29848-9776-4c7b-aaa5-871b47ec5513",
+      "da036b26-eefa-4ca4-9f84-8e0a3c276258",
+      "52259b73-6677-41fc-bda8-f346fcd3fbb9",
+      "2f116d64-fdea-4cb8-8a9b-00a6c123ba05"
+    ]
+  },
+  "34a835c4-20e3-40fc-b843-ee7ed1da7fc0": {
+    "user_id": "34a835c4-20e3-40fc-b843-ee7ed1da7fc0",
+    "username": "omkar",
+    "password": "test123",
+    "email": "omkar@gmail.com",
+    "is_active": true,
+    "role": "user",
+    "registered_events": [
+      "34028e56-f94c-4f9a-8253-17ab09c7f2f2",
+      "52259b73-6677-41fc-bda8-f346fcd3fbb9",
+      "da036b26-eefa-4ca4-9f84-8e0a3c276258",
+      "26c35b76-189d-45d9-8f83-85812502ea1f"
+    ]
+  },
+  "c8ff790f-1b04-4573-9506-9de54151045f": {
+    "user_id": "c8ff790f-1b04-4573-9506-9de54151045f",
+    "username": "gm",
+    "password": "gm123",
+    "email": "gm@gmail.com",
+    "is_active": true,
+    "role": "user",
+    "registered_events": [
+      "52259b73-6677-41fc-bda8-f346fcd3fbb9",
+      "26c35b76-189d-45d9-8f83-85812502ea1f",
+      "95f1fc83-3c7a-45f4-89f0-224681a1dfc1",
+      "34028e56-f94c-4f9a-8253-17ab09c7f2f2",
+      "67c7b79d-53f2-4ef3-86e0-b07beb416ac7",
+      "65a9313f-c37b-456d-a011-26cd955c5b43",
+      "2f116d64-fdea-4cb8-8a9b-00a6c123ba05"
+    ]
+  },
+  "9994e672-c672-4090-b3b3-19ed5958a68f": {
+    "user_id": "9994e672-c672-4090-b3b3-19ed5958a68f",
+    "username": "kumeshwar",
+    "password": "123",
+    "email": "kumeshwar@gmail.com",
+    "is_active": true,
+    "role": "user",
+    "registered_events": [
+      "2b47dee0-33ca-49c4-b9fc-59ac5db3dbe0",
+      "34028e56-f94c-4f9a-8253-17ab09c7f2f2"
+    ]
+  }
+}
