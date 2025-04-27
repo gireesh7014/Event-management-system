@@ -22,7 +22,7 @@ class LoginFrame(tk.Frame):
         self.on_register = on_register
         
         # Configure the frame
-        self.configure(padx=310, pady=200)
+        self.configure(padx=600, pady=300)
         
         # Create widgets
         self.create_widgets()
